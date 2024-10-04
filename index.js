@@ -30,6 +30,12 @@ const connectDB = async () => {
 //middleware
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 app.use(cors());
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
